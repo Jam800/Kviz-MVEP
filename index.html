@@ -780,13 +780,16 @@ function loadQuestion() {
             const options = document.querySelectorAll("input[name='answer']");
 
             options.forEach((option, index) => {
-                if (index === questions[currentQuestion].answer) {
-                    option.parentNode.style.backgroundColor = "#28a745"; // Točan odgovor - zeleno
-                } else {
-                    option.parentNode.style.backgroundColor = "#dc3545"; // Netočan odgovor - crveno
-                }
-                option.disabled = true; // Onemogućavanje daljnjeg odabira
-            });
+    if (index === questions[currentQuestion].answer) {
+        option.parentNode.style.backgroundColor = "#28a745"; // Točan odgovor - zeleno
+    } else {
+        option.parentNode.style.backgroundColor = "#dc3545"; // Netočan odgovor - crveno
+    }
+    option.parentNode.style.border = "2px solid #000";
+    option.parentNode.style.fontWeight = "bold";
+    option.parentNode.style.boxShadow = "inset 0 0 5px #000";
+    option.disabled = true; // Onemogućavanje daljnjeg odabira
+});
 
             if (parseInt(selectedOption.value) === questions[currentQuestion].answer) {
                 score++;
