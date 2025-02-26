@@ -736,6 +736,28 @@
     }
 ];
 
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+    const questionElem = document.getElementById("question-text");
+    const optionsContainer = document.getElementById("options-container");
+    
+    questionElem.textContent = questions[currentQuestion].question;
+    optionsContainer.innerHTML = "";
+
+    questions[currentQuestion].options.forEach((option, index) => {
+        const label = document.createElement("label");
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "answer";
+        input.value = index;
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(" " + option));
+        optionsContainer.appendChild(label);
+    });
+}
+
 function nextQuestion() {
     const selectedOption = document.querySelector("input[name='answer']:checked");
     if (!selectedOption) {
@@ -743,20 +765,21 @@ function nextQuestion() {
         return;
     }
 
-    // Dohvati sve opcije odgovora
     const options = document.querySelectorAll("input[name='answer']");
-    
-    // Provjera točnosti odgovora i vizualno označavanje
+
     options.forEach((option, index) => {
         if (index === questions[currentQuestion].answer) {
-            option.parentNode.style.backgroundColor = "#28a745"; // Zelena boja za točan odgovor
+            option.parentNode.style.backgroundColor = "#28a745"; // Točan odgovor - zeleno
         } else {
-            option.parentNode.style.backgroundColor = "#dc3545"; // Crvena boja za netočan odgovor
+            option.parentNode.style.backgroundColor = "#dc3545"; // Netočan odgovor - crveno
         }
-        option.disabled = true; // Onemogućavanje daljnjeg klikanja nakon odabira
+        option.disabled = true; // Onemogućavanje daljnjeg odabira
     });
 
-    // Pričekaj sekundu, pa prijeđi na sljedeće pitanje
+    if (parseInt(selectedOption.value) === questions[currentQuestion].answer) {
+        score++;
+    }
+
     setTimeout(() => {
         currentQuestion++;
         if (currentQuestion < questions.length) {
@@ -767,50 +790,16 @@ function nextQuestion() {
     }, 1000);
 }
 
-    // Dohvati sve opcije odgovora
-    const options = document.querySelectorAll("input[name='answer']");
-    
-    // Provjera točnosti odgovora i vizualno označavanje
-    options.forEach((option, index) => {
-        if (index === questions[currentQuestion].answer) {
-            option.parentNode.style.backgroundColor = "#28a745"; // Zelena boja za točan odgovor
-        } else {
-            option.parentNode.style.backgroundColor = "#dc3545"; // Crvena boja za netočan odgovor
-        }
-        option.disabled = true; // Onemogućavanje daljnjeg klikanja nakon odabira
-    });
-
-    // Pričekaj sekundu, pa prijeđi na sljedeće pitanje
-    setTimeout(() => {
-        currentQuestion++;
-        if (currentQuestion < questions.length) {
-            loadQuestion();
-        } else {
-            showResults();
-        }
-    }, 1000);
+function showResults() {
+    document.getElementById("quiz-content").style.display = "none";
+    const resultElem = document.getElementById("result");
+    resultElem.style.display = "block";
+    resultElem.innerHTML = `<h2>Vaš rezultat: ${score}/${questions.length}</h2>`;
 }
-            
-            if (parseInt(selectedOption.value) === questions[currentQuestion].answer) {
-                score++;
-            }
-            
-            currentQuestion++;
-            if (currentQuestion < questions.length) {
-                loadQuestion();
-            } else {
-                showResults();
-            }
-        }
-        
-        function showResults() {
-            document.getElementById("quiz-content").style.display = "none";
-            const resultElem = document.getElementById("result");
-            resultElem.style.display = "block";
-            resultElem.innerHTML = `<h2>Vaš rezultat: ${score}/${questions.length}</h2>`;
-        }
-        
-        loadQuestion();
+
+// Inicijalno učitavanje prvog pitanja
+loadQuestion();
+
     </script>
 </body>
 </html>
