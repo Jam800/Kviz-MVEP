@@ -764,16 +764,16 @@ function loadQuestion() {
                 input.type = "radio";
                 input.name = "answer";
                 input.value = index;
-                input.onclick = () => {
-    document.querySelectorAll(".options label").forEach(label => {
-        label.style.backgroundColor = "#007BFF";
-        label.style.border = "none";
-        label.style.fontWeight = "normal";
+                input.addEventListener('change', () => {
+    document.querySelectorAll('.options label').forEach(lbl => {
+        lbl.style.backgroundColor = '#007BFF';
+        lbl.style.border = 'none';
+        lbl.style.fontWeight = 'normal';
     });
-    label.style.backgroundColor = "#ffcc00"; // Žuta boja označava odabran odgovor
-    label.style.border = "2px solid #000";
-    label.style.fontWeight = "bold";
-};
+    label.style.backgroundColor = '#ffcc00'; // Žuta boja označava odabran odgovor
+    label.style.border = '2px solid #000';
+    label.style.fontWeight = 'bold';
+});
 
                 label.appendChild(input);
                 label.appendChild(document.createTextNode(" " + option));
