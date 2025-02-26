@@ -731,10 +731,10 @@
         answer: 0
     }
 ];
-        let currentQuestion = 0;
-        let score = 0;
+       let currentQuestion = 0;
+let score = 0;
 
-        function shuffleArray(array) {
+function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -748,10 +748,12 @@ function shuffleAnswers(question) {
     question.answer = answers.findIndex(a => a.index === question.answer);
 }
 
+// Miješanje odgovora prije nego što se kviz učita
 questions.forEach(q => shuffleAnswers(q));
+
 function loadQuestion() {
-            const questionElem = document.getElementById("question-text");
-            const optionsContainer = document.getElementById("options-container");
+    const questionElem = document.getElementById("question-text");
+    const optionsContainer = document.getElementById("options-container");
             
             questionElem.textContent = questions[currentQuestion].question;
             optionsContainer.innerHTML = "";
