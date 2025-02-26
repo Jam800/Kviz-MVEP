@@ -169,12 +169,36 @@
             });
         }
         
-        function nextQuestion() {
-            const selectedOption = document.querySelector("input[name='answer']:checked");
-            if (!selectedOption) {
-                alert("Molimo odaberite odgovor!");
-                return;
-            }
+       function nextQuestion() {
+    const selectedOption = document.querySelector("input[name='answer']:checked");
+    if (!selectedOption) {
+        alert("Molimo odaberite odgovor!");
+        return;
+    }
+
+    // Dohvati sve opcije odgovora
+    const options = document.querySelectorAll("input[name='answer']");
+    
+    // Provjera točnosti odgovora i vizualno označavanje
+    options.forEach((option, index) => {
+        if (index === questions[currentQuestion].answer) {
+            option.parentNode.style.backgroundColor = "#28a745"; // Zelena boja za točan odgovor
+        } else {
+            option.parentNode.style.backgroundColor = "#dc3545"; // Crvena boja za netočan odgovor
+        }
+        option.disabled = true; // Onemogućavanje daljnjeg klikanja nakon odabira
+    });
+
+    // Pričekaj sekundu, pa prijeđi na sljedeće pitanje
+    setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+            loadQuestion();
+        } else {
+            showResults();
+        }
+    }, 1000);
+}
             
             if (parseInt(selectedOption.value) === questions[currentQuestion].answer) {
                 score++;
