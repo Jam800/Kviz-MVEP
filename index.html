@@ -76,50 +76,576 @@
     </div>
 
     <script>
-        let questions = [
+        questions = [
     {
-        question: "Koje su glavne institucije EU?",
+        question: "Što podrazumijeva diplomatska tehnika?",
         options: [
-            "Europska komisija, Vijeće EU, Europski parlament",
-            "NATO, UN, Svjetska banka",
-            "Vijeće sigurnosti, MMF, ECB"
+            "Mehanizme i običaje koje suverene države koriste u međunarodnim odnosima",
+            "Protokolarna pravila unutar nacionalnih vlada",
+            "Pravila poslovnog pregovaranja"
         ],
         answer: 0
     },
     {
-        question: "Koliko država članica ima EU?",
-        options: ["27", "30", "32"],
-        answer: 0
-    },
-    {
-        question: "Koja je uloga Europske komisije?",
+        question: "Koji su osnovni oblici diplomatskog dopisivanja?",
         options: [
-            "Predlaganje zakona i provođenje politika EU",
-            "Donošenje zakona bez Parlamenta",
-            "Reguliranje nacionalnih vlada"
+            "Službeno, osobno i privatno dopisivanje",
+            "Formalno i neformalno dopisivanje",
+            "Eksplicitno i implicitno diplomatsko dopisivanje"
         ],
         answer: 0
     },
     {
-        question: "Koja je uloga Opće skupštine UN-a?",
+        question: "Što je verbalna nota?",
         options: [
-            "Razmatranje globalnih pitanja i donošenje preporuka",
-            "Donošenje zakona koji su obvezujući za sve države",
-            "Nadzor nad svjetskim financijskim institucijama"
+            "Najčešći način diplomatskog dopisivanja s pravnom obvezujućom važnošću",
+            "Privatni oblik komunikacije između veleposlanika i diplomata",
+            "Usmena rasprava među diplomatima bez pisanog traga"
         ],
         answer: 0
     },
     {
-        question: "Koji je primarni cilj Schengenskog sporazuma?",
+        question: "Koji su glavni dijelovi verbalne note?",
         options: [
-            "Omogućavanje slobodnog kretanja između država članica",
-            "Reguliranje trgovinskih odnosa između EU i trećih zemalja",
-            "Definiranje pravila za izbjegličke krize u Europi"
+            "Zaglavlje, broj, uvodna formula učtivosti, tekst, završna formula učtivosti, paraf i pečat",
+            "Datum, mjesto, potpis diplomata",
+            "Formalna naslovna strana i osobni podaci potpisnika"
         ],
         answer: 0
     },
     {
-        question: "Koja institucija donosi proračun Europske unije?",
+        question: "Koja je razlika između cirkularne i prosvjedne note?",
+        options: [
+            "Cirkularna nota se šalje većem broju primatelja, dok prosvjedna nota izražava neslaganje",
+            "Prosvjedna nota se koristi za pozitivne diplomatske odnose, dok cirkularna nota izražava kritiku",
+            "Nema razlike, obje note imaju istu funkciju u diplomaciji"
+        ],
+        answer: 0
+    },
+    {
+        question: "Što je Non Paper?",
+        options: [
+            "Neformalni dokument koji ne nosi službeni karakter",
+            "Zapisnik diplomatskog sastanka s punom pravnom važnošću",
+            "Osobno pismo između dviju diplomatskih strana"
+        ],
+        answer: 0
+    },
+    {
+        question: "Što je Aide-mémoire (Pro-memoria)?",
+        options: [
+            "Pisani podsjetnik koji precizira usmeni diplomatski razgovor",
+            "Službeni zahtjev upućen drugoj državi",
+            "Bilješka o postignutom sporazumu između dvije vlade"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je glavna svrha memoranduma u diplomaciji?",
+        options: [
+            "Predstavljanje sažetog pregleda činjenica i stavova o nekom pitanju",
+            "Oblik diplomatskog izvještavanja između veleposlanstava",
+            "Nalog za zatvaranje diplomatskog predstavništva"
+        ],
+        answer: 0
+    },
+    {
+        question: "Što je Bout de Papier?",
+        options: [
+            "Vrlo neformalan oblik bilježenja diplomatske komunikacije",
+            "Vrsta diplomatskog dokumenta s punom pravnom važnošću",
+            "Formalna diplomatska nota kojom se izražava stav vlade"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je svrha kurirskog pisma u diplomaciji?",
+        options: [
+            "Jamčenje imuniteta osobi koja nosi diplomatsku poštu",
+            "Službena uputa za provođenje diplomatskih sastanaka",
+            "Osobno pismo veleposlanika prema nadređenima u ministarstvu"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je Hrvatska postala članica Vijeća Europe?",
+        options: [
+            "1996.",
+            "2000.",
+            "1993."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je Hrvatska postala članica Organizacije za europsku sigurnost i suradnju (OESS)?",
+        options: [
+            "1992.",
+            "1995.",
+            "2001."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine su Ujedinjeni narodi priznali Hrvatsku kao neovisnu državu?",
+        options: [
+            "1992.",
+            "1991.",
+            "1993."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je potpisan Erdutski sporazum?",
+        options: [
+            "1995.",
+            "1998.",
+            "1992."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je Hrvatska pristupila Svjetskoj trgovinskoj organizaciji (WTO)?",
+        options: [
+            "2000.",
+            "1996.",
+            "2003."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je Hrvatska pristupila Europskom gospodarskom prostoru (EEA) kao pridružena članica?",
+        options: [
+            "2014.",
+            "2007.",
+            "2011."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je Hrvatska pristupila Partnerstvu za mir (PfP)?",
+        options: [
+            "2000.",
+            "1994.",
+            "2006."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je Hrvatska ratificirala Sporazum o stabilizaciji i pridruživanju s EU?",
+        options: [
+            "2001.",
+            "1999.",
+            "2003."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine su započeli pregovori Hrvatske za pristupanje EU?",
+        options: [
+            "2005.",
+            "2003.",
+            "2007."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je Hrvatska postala punopravna članica UN-a?",
+        options: [
+            "1992.",
+            "1995.",
+            "1998."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je osnovana Europska unija?",
+        options: [
+            "1993.",
+            "1957.",
+            "2004."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je Hrvatska postala članica Europske unije?",
+        options: [
+            "2013.",
+            "2009.",
+            "2018."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je potpisan Schengenski sporazum?",
+        options: [
+            "1985.",
+            "1995.",
+            "2001."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je uspostavljena eurozona?",
+        options: [
+            "1999.",
+            "1993.",
+            "2004."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je Hrvatska postala članica NATO saveza?",
+        options: [
+            "2009.",
+            "2013.",
+            "1995."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je donesen Lisabonski ugovor?",
+        options: [
+            "2007.",
+            "1992.",
+            "2010."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je potpisan Rimski ugovor?",
+        options: [
+            "1957.",
+            "1993.",
+            "1986."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je Hrvatska uvela euro kao službenu valutu?",
+        options: [
+            "2023.",
+            "2018.",
+            "2015."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je Hrvatska postala dio Schengenskog prostora?",
+        options: [
+            "2023.",
+            "2017.",
+            "2015."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koje godine je potpisan Maastrichtski ugovor?",
+        options: [
+            "1992.",
+            "1986.",
+            "1999."
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je svrha Europskog socijalnog fonda (ESF)?",
+        options: [
+            "Poboljšanje zaposlenosti i obrazovanja u EU",
+            "Regulacija financijskih tržišta EU",
+            "Osiguravanje sigurnosti hrane u EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je glavni cilj Strategije EU za održivu mobilnost?",
+        options: [
+            "Smanjenje emisija iz prometa i razvoj ekoloških rješenja",
+            "Izgradnja novih autocesta diljem EU",
+            "Povećanje carina na uvozna vozila"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je glavna funkcija Europskog suda pravde?",
+        options: [
+            "Tumačenje i primjena prava EU",
+            "Reguliranje monetarne politike EU",
+            "Donošenje zakona za države članice EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je osnovni cilj Instrumenta za povezivanje Europe (CEF)?",
+        options: [
+            "Financiranje transportne, energetske i digitalne infrastrukture",
+            "Subvencioniranje poljoprivrednih projekata EU",
+            "Razvoj vojne suradnje među državama članicama"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je uloga Europske obrambene agencije (EDA)?",
+        options: [
+            "Jačanje obrambene suradnje i sposobnosti EU",
+            "Upravljanje carinskom politikom EU",
+            "Reguliranje europske trgovinske mreže"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je cilj EU strategije za vodu?",
+        options: [
+            "Zaštita i održivo upravljanje vodnim resursima",
+            "Povećanje privatizacije vodoopskrbe",
+            "Uvođenje jedinstvenih tarifa za korištenje vode u EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je glavna svrha Europske strategije za plavu ekonomiju?",
+        options: [
+            "Održivo korištenje morskih resursa",
+            "Povećanje industrijskog ribolova u EU",
+            "Reguliranje međunarodnih pomorskih trgovačkih ruta"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je osnovni cilj Programa LIFE?",
+        options: [
+            "Podrška projektima zaštite okoliša i klime",
+            "Regulacija financijskih institucija EU",
+            "Povećanje izvoza energenata iz EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je svrha Zajedničkog istraživačkog centra (JRC)?",
+        options: [
+            "Osiguravanje znanstvenih podataka za politike EU",
+            "Nadzor nad digitalnim tržištem EU",
+            "Provođenje sudskih postupaka u EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je glavni cilj Strategije EU za kružno gospodarstvo?",
+        options: [
+            "Smanjenje otpada i povećanje reciklaže",
+            "Uvođenje zajedničke europske valute",
+            "Povećanje trgovinske suradnje s Azijom"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je glavni cilj programa Horizon Europe?",
+        options: [
+            "Financiranje istraživanja i inovacija u EU",
+            "Regulacija bankarskog sektora",
+            "Osiguranje vojnih investicija u EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je svrha Europske agencije za sigurnost hrane (EFSA)?",
+        options: [
+            "Osiguravanje znanstvenih savjeta o sigurnosti hrane",
+            "Reguliranje cijena prehrambenih proizvoda u EU",
+            "Provođenje zdravstvenih inspekcija u restoranima"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je osnovni cilj Europske energetske unije?",
+        options: [
+            "Osiguravanje sigurne, održive i pristupačne energije",
+            "Smanjenje uvoza energije iz trećih zemalja",
+            "Regulacija cijena električne energije u EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji dokument uređuje pristup podacima u EU?",
+        options: [
+            "Opća uredba o zaštiti podataka (GDPR)",
+            "Lisabonski ugovor",
+            "Schengenski sporazum"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je glavna svrha Europske svemirske agencije (ESA)?",
+        options: [
+            "Razvoj svemirskih tehnologija i istraživanje svemira",
+            "Reguliranje međunarodnog zračnog prometa",
+            "Nadzor nad satelitskim komunikacijama u EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja institucija nadzire provedbu trgovinskih sporazuma EU?",
+        options: [
+            "Europska komisija",
+            "Europski sud pravde",
+            "Europska središnja banka"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je cilj Direktive o obnovljivoj energiji?",
+        options: [
+            "Povećati udio obnovljive energije u EU do 2030. godine",
+            "Uvesti jedinstvenu cijenu električne energije",
+            "Zabrana upotrebe fosilnih goriva u EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je cilj Zajedničke ribarstvene politike EU?",
+        options: [
+            "Održivo upravljanje ribljim resursima",
+            "Povećanje uvoza ribe iz trećih zemalja",
+            "Subvencioniranje industrijskog ribolova u EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je glavna svrha Europskog fonda za regionalni razvoj (ERDF)?",
+        options: [
+            "Podrška gospodarskoj i socijalnoj koheziji u EU",
+            "Reguliranje financijskih tržišta EU",
+            "Povećanje izvoza EU prema Aziji"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je osnovni cilj Strategije EU za biološku raznolikost?",
+        options: [
+            "Zaštita prirodnih staništa i vrsta u EU",
+            "Uspostava europske mreže za lov i ribolov",
+            "Povećanje poljoprivredne proizvodnje u EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je glavna uloga Europske središnje banke (ECB)?",
+        options: [
+            "Održavanje stabilnosti eura i kontrola inflacije",
+            "Upravljanje fiskalnom politikom država članica",
+            "Reguliranje vanjske trgovine EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je cilj Pakta o stabilnosti i rastu?",
+        options: [
+            "Održavanje fiskalne discipline u eurozoni",
+            "Financiranje infrastrukturnih projekata EU",
+            "Regulacija cijena energenata u EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je osnovni cilj Zajedničke poljoprivredne politike EU?",
+        options: [
+            "Osiguravanje stabilnih prihoda poljoprivrednicima i sigurnosti hrane",
+            "Reguliranje cijena poljoprivrednih proizvoda u EU",
+            "Smanjenje izvoza poljoprivrednih proizvoda iz EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja institucija je odgovorna za provedbu pravila tržišnog natjecanja u EU?",
+        options: [
+            "Europska komisija",
+            "Europska središnja banka",
+            "Europski parlament"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je cilj Kohezijskih fondova EU?",
+        options: [
+            "Smanjenje razlika u razvijenosti između regija EU",
+            "Financiranje obrambenih projekata",
+            "Povećanje trgovinskih barijera u EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je cilj Digitalnog kompasa EU do 2030. godine?",
+        options: [
+            "Osiguravanje digitalne suverenosti EU i razvoj infrastrukture",
+            "Ukidanje tradicionalnih industrija u EU",
+            "Uspostava jedinstvene digitalne valute EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji dokument jamči pravo na azil u EU?",
+        options: [
+            "Dublinska uredba",
+            "Schengenski sporazum",
+            "Europska konvencija o ljudskim pravima"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je uloga Europskog ombudsmana?",
+        options: [
+            "Istraživanje pritužbi protiv institucija EU",
+            "Donošenje zakona o ljudskim pravima",
+            "Upravljanje financijskim institucijama EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja institucija odlučuje o proširenju Europske unije?",
+        options: [
+            "Europsko vijeće i Europska komisija",
+            "Europski sud pravde",
+            "Europska središnja banka"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja institucija provodi Zajedničku vanjsku i sigurnosnu politiku EU?",
+        options: [
+            "Visoki predstavnik EU za vanjske poslove i sigurnosnu politiku",
+            "Europska središnja banka",
+            "Vijeće Europe"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja su glavna obilježja unutarnjeg tržišta EU?",
+        options: [
+            "Slobodno kretanje robe, usluga, ljudi i kapitala",
+            "Zajednička valuta i identična porezna politika",
+            "Samo slobodna trgovina između država članica"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je uloga Vijeća Europske unije?",
+        options: [
+            "Donošenje zakona i koordinacija politika EU",
+            "Nadzor nad sudskim postupcima u EU",
+            "Regulacija trgovinskih odnosa s trećim zemljama"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je cilj Zelenog plana EU?",
+        options: [
+            "Postizanje klimatske neutralnosti do 2050. godine",
+            "Uvođenje jedinstvene porezne stope",
+            "Povećanje vojnih kapaciteta EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja institucija donosi proračun EU?",
         options: [
             "Europski parlament i Vijeće EU",
             "Europska komisija",
@@ -128,53 +654,118 @@
         answer: 0
     },
     {
-        question: "Koji je glavni cilj Svjetske trgovinske organizacije (WTO)?",
+        question: "Koji dokument regulira ljudska prava u EU?",
         options: [
-            "Smanjenje trgovinskih barijera i regulacija",
-            "Upravljanje međunarodnim financijama",
-            "Koordinacija fiskalne politike država članica EU"
+            "Povelja EU o temeljnim pravima",
+            "Schengenski sporazum",
+            "Lisabonski ugovor"
         ],
         answer: 0
     },
     {
-        question: "Što je zajednička poljoprivredna politika EU?",
+        question: "Koji je cilj Erasmus+ programa?",
         options: [
-            "Sustav potpore poljoprivrednicima i osiguravanja stabilnosti tržišta",
-            "Reguliranje izvoza i uvoza u EU",
-            "Održavanje nacionalnih poljoprivrednih strategija"
+            "Pružanje mogućnosti obrazovanja i mobilnosti mladima",
+            "Financiranje infrastrukturnih projekata EU",
+            "Osiguravanje sredstava za vojna istraživanja"
+        ],
+        answer: 0
+    },
+    {
+        question: "Što omogućuje Schengenski sporazum?",
+        options: [
+            "Slobodno kretanje ljudi bez unutarnjih granica",
+            "Uvođenje eura u sve države članice",
+            "Zajedničku vanjsku politiku EU"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je cilj digitalne strategije EU?",
+        options: [
+            "Unaprijediti digitalnu transformaciju Europe",
+            "Ukinuti sve tradicionalne industrije",
+            "Smanjiti pristup internetu u ruralnim područjima"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je osnovni cilj Povelje o osnovnim pravima EU?",
+        options: [
+            "Zaštita temeljnih prava građana EU",
+            "Regulacija trgovinskih odnosa EU",
+            "Uvođenje zajedničke europske vojske"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je glavni cilj TEN-T mreže?",
+        options: [
+            "Razvoj transeuropske prometne mreže",
+            "Financiranje ruralnih projekata u EU",
+            "Regulacija energetskih tržišta"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja su glavna obilježja unutarnjeg tržišta EU?",
+        options: [
+            "Slobodno kretanje robe, usluga, ljudi i kapitala",
+            "Zajednička valuta i identična porezna politika",
+            "Samo slobodna trgovina između država članica"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koja je uloga Vijeća Europske unije?",
+        options: [
+            "Donošenje zakona i koordinacija politika EU",
+            "Nadzor nad sudskim postupcima u EU",
+            "Regulacija trgovinskih odnosa s trećim zemljama"
+        ],
+        answer: 0
+    },
+    {
+        question: "Koji je cilj Zelenog plana EU?",
+        options: [
+            "Postizanje klimatske neutralnosti do 2050. godine",
+            "Uvođenje jedinstvene porezne stope",
+            "Povećanje vojnih kapaciteta EU"
         ],
         answer: 0
     }
 ];
-        
-        let currentQuestion = 0;
-        let score = 0;
-        
-        function loadQuestion() {
-            const questionElem = document.getElementById("question-text");
-            const optionsContainer = document.getElementById("options-container");
-            
-            questionElem.textContent = questions[currentQuestion].question;
-            optionsContainer.innerHTML = "";
-            
-            questions[currentQuestion].options.forEach((option, index) => {
-                const label = document.createElement("label");
-                const input = document.createElement("input");
-                input.type = "radio";
-                input.name = "answer";
-                input.value = index;
-                label.appendChild(input);
-                label.appendChild(document.createTextNode(" " + option));
-                optionsContainer.appendChild(label);
-            });
-        }
-        
-       function nextQuestion() {
+
+function nextQuestion() {
     const selectedOption = document.querySelector("input[name='answer']:checked");
     if (!selectedOption) {
         alert("Molimo odaberite odgovor!");
         return;
     }
+
+    // Dohvati sve opcije odgovora
+    const options = document.querySelectorAll("input[name='answer']");
+    
+    // Provjera točnosti odgovora i vizualno označavanje
+    options.forEach((option, index) => {
+        if (index === questions[currentQuestion].answer) {
+            option.parentNode.style.backgroundColor = "#28a745"; // Zelena boja za točan odgovor
+        } else {
+            option.parentNode.style.backgroundColor = "#dc3545"; // Crvena boja za netočan odgovor
+        }
+        option.disabled = true; // Onemogućavanje daljnjeg klikanja nakon odabira
+    });
+
+    // Pričekaj sekundu, pa prijeđi na sljedeće pitanje
+    setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+            loadQuestion();
+        } else {
+            showResults();
+        }
+    }, 1000);
+}
 
     // Dohvati sve opcije odgovora
     const options = document.querySelectorAll("input[name='answer']");
