@@ -1,43 +1,121 @@
-<!DOCTYPE html>
-<html lang="hr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kviz o EU</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            text-align: center;
-        }
-        .question {
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-        .options label {
-            display: block;
-            margin: 5px 0;
-            cursor: pointer;
-        }
-        button {
-            margin-top: 20px;
-            padding: 10px 15px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <h1>Kviz o Europskoj uniji</h1>
-    <div id="quiz-container">
-        <div class="question" id="question-text"></div>
-        <div class="options" id="options-container"></div>
-        <button onclick="nextQuestion()">Dalje</button>
-    </div>
-    <div id="result" style="display:none;"></div>
-
-    <script>
-        const questions = [
+questions = [
+            {
+                question: "Koja je uloga Opće skupštine UN-a?",
+                options: [
+                    "Razmatranje globalnih pitanja i donošenje preporuka",
+                    "Donošenje zakona koji su obvezujući za sve države",
+                    "Nadzor nad svjetskim financijskim institucijama"
+                ],
+                answer: 0
+            },
+            {
+                question: "Koji je primarni cilj Schengenskog sporazuma?",
+                options: [
+                    "Omogućavanje slobodnog kretanja između država članica",
+                    "Reguliranje trgovinskih odnosa između EU i trećih zemalja",
+                    "Definiranje pravila za izbjegličke krize u Europi"
+                ],
+                answer: 0
+            },
+            {
+                question: "Koja je glavna uloga Međunarodnog suda pravde?",
+                options: [
+                    "Rješavanje pravnih sporova između država",
+                    "Reguliranje međunarodnih trgovačkih odnosa",
+                    "Kontrola financijskih aktivnosti unutar EU"
+                ],
+                answer: 0
+            },
+            {
+                question: "Koja institucija donosi proračun Europske unije?",
+                options: [
+                    "Europski parlament i Vijeće EU",
+                    "Europska komisija",
+                    "Europska središnja banka"
+                ],
+                answer: 0
+            },
+            {
+                question: "Koji je glavni cilj Svjetske trgovinske organizacije (WTO)?",
+                options: [
+                    "Smanjenje trgovinskih barijera i regulacija",
+                    "Upravljanje međunarodnim financijama",
+                    "Koordinacija fiskalne politike država članica EU"
+                ],
+                answer: 0
+            },
+            {
+                question: "Što je zajednička poljoprivredna politika EU?",
+                options: [
+                    "Sustav potpore poljoprivrednicima i osiguravanja stabilnosti tržišta",
+                    "Reguliranje izvoza i uvoza u EU",
+                    "Održavanje nacionalnih poljoprivrednih strategija"
+                ],
+                answer: 0
+            },
+            {
+                question: "Koji je glavni cilj Europske središnje banke?",
+                options: [
+                    "Održavanje stabilnosti cijena",
+                    "Reguliranje nacionalnih ekonomija",
+                    "Upravljanje vanjskom trgovinom"
+                ],
+                answer: 0
+            },
+            {
+                question: "Koji je glavni pravni dokument Europske unije?",
+                options: [
+                    "Lisabonski ugovor",
+                    "Rimski ugovor",
+                    "Schengenski sporazum"
+                ],
+                answer: 0
+            },
+            {
+                question: "Koji su glavni ciljevi Zajedničke vanjske i sigurnosne politike (ZVSP)?",
+                options: [
+                    "Zaštita zajedničkih vrijednosti, očuvanje mira i jačanje sigurnosti EU",
+                    "Povećanje trgovinskih tarifa i regulacija u EU",
+                    "Centralizacija zakonodavstva unutar svih država članica"
+                ],
+                answer: 0
+            },
+            {
+                question: "Koji je glavni cilj Svjetske banke?",
+                options: [
+                    "Pružanje financijske pomoći državama u razvoju",
+                    "Reguliranje globalne monetarne politike",
+                    "Kontrola međunarodnih trgovinskih pravila"
+                ],
+                answer: 0
+            },
+            {
+                question: "Koji je glavni cilj Međunarodnog monetarnog fonda (MMF)?",
+                options: [
+                    "Očuvanje stabilnosti međunarodnog monetarnog sustava",
+                    "Financiranje infrastrukturnih projekata",
+                    "Uspostava globalne fiskalne politike"
+                ],
+                answer: 0
+            },
+            {
+                question: "Koji su ključni prioriteti vanjske politike Hrvatske?",
+                options: [
+                    "Pozicioniranje unutar EU institucija, Schengen i Eurozona",
+                    "Napredovanje prema članstvu u NATO-u",
+                    "Zatvaranje međunarodne suradnje"
+                ],
+                answer: 0
+            },
+            {
+                question: "Što omogućuje Dublinska uredba?",
+                options: [
+                    "Određivanje države članice odgovorne za razmatranje zahtjeva za azil",
+                    "Slobodno putovanje bez viza",
+                    "Zajedničku vojnu strategiju unutar EU"
+                ],
+                answer: 0
+            },
             {
                 question: "Koje su glavne institucije EU?",
                 options: [
@@ -71,20 +149,20 @@
                 answer: 0
             },
             {
-                question: "Što regulira Lisabonski ugovor?",
+                question: "Koja organizacija nadzire međunarodnu trgovinu?",
                 options: [
-                    "Institucionalne promjene i pravnu osobnost EU",
-                    "Osnivanje NATO saveza",
-                    "Pravila trgovinske razmjene u EU"
+                    "Svjetska trgovinska organizacija (WTO)",
+                    "Međunarodni monetarni fond (IMF)",
+                    "Europska komisija"
                 ],
                 answer: 0
             },
             {
-                question: "Koji su glavni ciljevi Svjetske trgovinske organizacije (WTO)?",
+                question: "Koji sporazum regulira azil u EU?",
                 options: [
-                    "Eliminacija carinskih i necarinskih prepreka trgovini",
-                    "Reguliranje financijskih tržišta",
-                    "Upravljanje međunarodnim investicijama"
+                    "Dublinski sporazum",
+                    "Schengenski sporazum",
+                    "Lisabonski ugovor"
                 ],
                 answer: 0
             },
@@ -98,11 +176,29 @@
                 answer: 0
             },
             {
-                question: "Što Schengenski sporazum omogućava?",
+                question: "Koji su glavni ciljevi Kohezijske politike EU?",
                 options: [
-                    "Slobodno kretanje ljudi bez graničnih kontrola",
-                    "Uvođenje eura u sve članice EU",
-                    "Uspostavu zajedničke sigurnosne politike"
+                    "Smanjenje razlika među regijama i jačanje konkurentnosti",
+                    "Uspostava jedinstvene vojske EU",
+                    "Promocija slobodne trgovine"
+                ],
+                answer: 0
+            },
+            {
+                question: "Koji sporazum omogućuje slobodno kretanje unutar EU?",
+                options: [
+                    "Schengenski sporazum",
+                    "Dublinski sporazum",
+                    "Maastrichtski ugovor"
+                ],
+                answer: 0
+            },
+            {
+                question: "Koja je uloga Ujedinjenih naroda (UN)?",
+                options: [
+                    "Očuvanje međunarodnog mira i sigurnosti",
+                    "Regulacija svjetskih financija",
+                    "Nadzor tržišta energije"
                 ],
                 answer: 0
             }
