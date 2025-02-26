@@ -72,73 +72,7 @@
     </div>
 
     <script>
-        let currentQuestion = 0;
-        let score = 0;
-
-        function loadQuestion() {
-            const questionElem = document.getElementById("question-text");
-            const optionsContainer = document.getElementById("options-container");
-            
-            questionElem.textContent = questions[currentQuestion].question;
-            optionsContainer.innerHTML = "";
-
-            questions[currentQuestion].options.forEach((option, index) => {
-                const label = document.createElement("label");
-                const input = document.createElement("input");
-                input.type = "radio";
-                input.name = "answer";
-                input.value = index;
-                label.appendChild(input);
-                label.appendChild(document.createTextNode(" " + option));
-                optionsContainer.appendChild(label);
-            });
-        }
-
-        function nextQuestion() {
-            const selectedOption = document.querySelector("input[name='answer']:checked");
-            if (!selectedOption) {
-                alert("Molimo odaberite odgovor!");
-                return;
-            }
-
-            const options = document.querySelectorAll("input[name='answer']");
-
-            options.forEach((option, index) => {
-                if (index === questions[currentQuestion].answer) {
-                    option.parentNode.style.backgroundColor = "#28a745"; // Točan odgovor - zeleno
-                } else {
-                    option.parentNode.style.backgroundColor = "#dc3545"; // Netočan odgovor - crveno
-                }
-                option.disabled = true; // Onemogućavanje daljnjeg odabira
-            });
-
-            if (parseInt(selectedOption.value) === questions[currentQuestion].answer) {
-                score++;
-            }
-
-            setTimeout(() => {
-                currentQuestion++;
-                if (currentQuestion < questions.length) {
-                    loadQuestion();
-                } else {
-                    showResults();
-                }
-            }, 1000);
-        }
-
-        function showResults() {
-            document.getElementById("quiz-content").style.display = "none";
-            const resultElem = document.getElementById("result");
-            resultElem.style.display = "block";
-            resultElem.innerHTML = `<h2>Vaš rezultat: ${score}/${questions.length}</h2>`;
-        }
-
-        // Inicijalno učitavanje prvog pitanja
-        loadQuestion();
-    </script>
-</body>
-</html>
-
+        
         questions = [
     {
         question: "Što podrazumijeva diplomatska tehnika?",
