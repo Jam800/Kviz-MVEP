@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kviz o EU</title>
+    <title>Kviz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 20px;
             background-color: #f4f4f4;
         }
         .quiz-container {
@@ -18,11 +17,12 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 50%;
             margin: auto;
+            margin-top: 50px;
         }
         .question {
-            margin-bottom: 20px;
             font-size: 18px;
             font-weight: bold;
+            margin-bottom: 15px;
         }
         .options label {
             display: block;
@@ -62,7 +62,7 @@
 </head>
 <body>
     <div class="quiz-container">
-        <h1>Kviz o Europskoj uniji</h1>
+        <h1>Kviz</h1>
         <div id="quiz-content">
             <div class="question" id="question-text"></div>
             <div class="options" id="options-container"></div>
@@ -72,7 +72,6 @@
     </div>
 
     <script>
-        
         questions = [
     {
         question: "Što podrazumijeva diplomatska tehnika?",
@@ -732,72 +731,69 @@
         answer: 0
     }
 ];
+        let currentQuestion = 0;
+        let score = 0;
 
-let currentQuestion = 0;
-let score = 0;
+        function loadQuestion() {
+            const questionElem = document.getElementById("question-text");
+            const optionsContainer = document.getElementById("options-container");
+            
+            questionElem.textContent = questions[currentQuestion].question;
+            optionsContainer.innerHTML = "";
 
-function loadQuestion() {
-    const questionElem = document.getElementById("question-text");
-    const optionsContainer = document.getElementById("options-container");
-    
-    questionElem.textContent = questions[currentQuestion].question;
-    optionsContainer.innerHTML = "";
-
-    questions[currentQuestion].options.forEach((option, index) => {
-        const label = document.createElement("label");
-        const input = document.createElement("input");
-        input.type = "radio";
-        input.name = "answer";
-        input.value = index;
-        label.appendChild(input);
-        label.appendChild(document.createTextNode(" " + option));
-        optionsContainer.appendChild(label);
-    });
-}
-
-function nextQuestion() {
-    const selectedOption = document.querySelector("input[name='answer']:checked");
-    if (!selectedOption) {
-        alert("Molimo odaberite odgovor!");
-        return;
-    }
-
-    const options = document.querySelectorAll("input[name='answer']");
-
-    options.forEach((option, index) => {
-        if (index === questions[currentQuestion].answer) {
-            option.parentNode.style.backgroundColor = "#28a745"; // Točan odgovor - zeleno
-        } else {
-            option.parentNode.style.backgroundColor = "#dc3545"; // Netočan odgovor - crveno
+            questions[currentQuestion].options.forEach((option, index) => {
+                const label = document.createElement("label");
+                const input = document.createElement("input");
+                input.type = "radio";
+                input.name = "answer";
+                input.value = index;
+                label.appendChild(input);
+                label.appendChild(document.createTextNode(" " + option));
+                optionsContainer.appendChild(label);
+            });
         }
-        option.disabled = true; // Onemogućavanje daljnjeg odabira
-    });
 
-    if (parseInt(selectedOption.value) === questions[currentQuestion].answer) {
-        score++;
-    }
+        function nextQuestion() {
+            const selectedOption = document.querySelector("input[name='answer']:checked");
+            if (!selectedOption) {
+                alert("Molimo odaberite odgovor!");
+                return;
+            }
 
-    setTimeout(() => {
-        currentQuestion++;
-        if (currentQuestion < questions.length) {
-            loadQuestion();
-        } else {
-            showResults();
+            const options = document.querySelectorAll("input[name='answer']");
+
+            options.forEach((option, index) => {
+                if (index === questions[currentQuestion].answer) {
+                    option.parentNode.style.backgroundColor = "#28a745"; // Točan odgovor - zeleno
+                } else {
+                    option.parentNode.style.backgroundColor = "#dc3545"; // Netočan odgovor - crveno
+                }
+                option.disabled = true; // Onemogućavanje daljnjeg odabira
+            });
+
+            if (parseInt(selectedOption.value) === questions[currentQuestion].answer) {
+                score++;
+            }
+
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    loadQuestion();
+                } else {
+                    showResults();
+                }
+            }, 1000);
         }
-    }, 1000);
-}
 
-function showResults() {
-    document.getElementById("quiz-content").style.display = "none";
-    const resultElem = document.getElementById("result");
-    resultElem.style.display = "block";
-    resultElem.innerHTML = `<h2>Vaš rezultat: ${score}/${questions.length}</h2>`;
-}
+        function showResults() {
+            document.getElementById("quiz-content").style.display = "none";
+            const resultElem = document.getElementById("result");
+            resultElem.style.display = "block";
+            resultElem.innerHTML = `<h2>Vaš rezultat: ${score}/${questions.length}</h2>`;
+        }
 
-// Inicijalno učitavanje prvog pitanja
-loadQuestion();
-
+        // Inicijalno učitavanje prvog pitanja
+        loadQuestion();
     </script>
 </body>
 </html>
-
