@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kviz o EU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .options label {
+            display: block;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kviz o Europskoj uniji</h1>
+    <div id="quiz-container">
+        <div class="question" id="question-text"></div>
+        <div class="options" id="options-container"></div>
+        <button onclick="nextQuestion()">Dalje</button>
+    </div>
+    <div id="result" style="display:none;"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "Koje su glavne institucije EU?",
+                options: [
+                    "Europska komisija, Vijeće EU, Europski parlament",
+                    "NATO, UN, Svjetska banka",
+                    "Vijeće sigurnosti, MMF, ECB"
+                ],
+                answer: 0
+            },
+            {
+                question: "Koliko država članica ima EU?",
+                options: ["27", "30", "32"],
+                answer: 0
+            },
+            {
+                question: "Koja je uloga Europske komisije?",
+                options: [
+                    "Predlaganje zakona i provođenje politika EU",
+                    "Donošenje zakona bez Parlamenta",
+                    "Reguliranje nacionalnih vlada"
+                ],
+                answer: 0
+            }
+        ];
+        
+        let currentQuestion = 0;
+        let score = 0;
+        
+        function loadQuestion() {
+            const questionElem = document.getElementById("question-text");
+            const optionsContainer = document.getElementById("options-container");
+            
+            questionElem.textContent = questions[currentQuestion].question;
+            optionsContainer.innerHTML = "";
+            
+            questions[currentQuestion].options.forEach((option, index) => {
+                const label = document.createElement("label");
+                const input = document.createElement("input");
+                input.type = "radio";
+                input.name = "answer";
+                input.value = index;
+                label.appendChild(input);
+                label.appendChild(document.createTextNode(" " + option));
+                optionsContainer.appendChild(label);
+            });
+        }
+        
+        function nextQuestion() {
+            const selectedOption = document.querySelector("input[name='answer']:checked");
+            if (!selectedOption) {
+                alert("Molimo odaberite odgovor!");
+                return;
+            }
+            
+            if (parseInt(selectedOption.value) === questions[currentQuestion].answer) {
+                score++;
+            }
+            
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+        
+        function showResults() {
+            document.getElementById("quiz-container").style.display = "none";
+            const resultElem = document.getElementById("result");
+            resultElem.style.display = "block";
+            resultElem.innerHTML = `<h2>Vaš rezultat: ${score}/${questions.length}</h2>`;
+        }
+        
+        loadQuestion();
+    </script>
+</body>
+</html>
